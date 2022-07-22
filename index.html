@@ -4,17 +4,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="bulma">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
         <link rel="stylesheet" href="jquery">
-      
         <link href="api" rel="stylesheet">
         <link rel="stylesheet" href="./assets/style.css">
         <title>Currency Exchange</title>
       </head>
 
 <body>
+    <div class="cards">
+        <article class="">
+            <header>
+                <h2>Exchangometer</h2>
+            </header>    
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropdown-content">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">$</a>
+                  <a href="#">¥</a>
+                  <a href="#">₱</a>
+                </div>
+              </div>
+        </article>
 
-
+        <article class="card">
+            <header>
+                <h2>Locator</h2>
+            </header>    
+            <button class="favorite styled" type="button">
+                FIND A BANK / EXCHANGE CENTER
+            </button>
+        </article>
+    </div>
 
     <script src="./assets/script.js"></script>
 </body>
