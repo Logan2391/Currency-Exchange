@@ -7,10 +7,25 @@ var requestOptions = {
   headers: myHeaders
 };
 
-fetch("https://api.apilayer.com/currency_data/live?source=AUD&currencies=USD,EUR", requestOptions)
+function getParams() {
+  var paramsSource = document.getElementById("#search-form-source").textContent();
+  var paramsCurrency = document.getElementById("#search-form-currency").textContent()
+
+  searchApi(paramsSource, paramsCurrency);
+}
+
+
+function searchApi(paramsSource, paramsCurrency) {
+  var currencyQueryUrl = "https://api.apilayer.com/currency_data/live?"
+  
+  if (paramsSource, paramsCurrency) {
+    currencyQueryUrl = "https://api.apilayer.com/currency_data/live?source=" + paramsSource + "&currencies=" + paramsCurrency;
+  }
+
+fetch(currencyQueryUrl, requestOptions)
 .then(function (response) {
   return response.json();
 })
-.then(function (data) {
-  console.log(data) 
-})
+}
+
+getParams();
