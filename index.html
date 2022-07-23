@@ -12,30 +12,53 @@
       </head>
 
 <body>
-    <div class="cards">
-        <article class="">
-            <header>
-                <h2>Exchangometer</h2>
-            </header>    
-            <div class="dropdown">
-                <button class="dropdown-content">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="#">$</a>
-                  <a href="#">¥</a>
-                  <a href="#">₱</a>
-                </div>
-              </div>
-        </article>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <h1 class="navbar-item">Currency Exchange Rates</h1>
 
-        <article class="card">
-            <header>
-                <h2>Locator</h2>
-            </header>    
-            <button class="favorite styled" type="button">
-                FIND A BANK / EXCHANGE CENTER
-            </button>
-        </article>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <a class="navbar-item">
+        Documentation
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
     </div>
+
+    
+  </div>
+</nav>
 
     <script src="./assets/script.js"></script>
 </body>
