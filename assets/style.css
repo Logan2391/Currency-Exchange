@@ -28,6 +28,6 @@ h1 {
     cursor: pointer;
 }
 
-.notification {
-    width: 450px;
+.navbarBasicExample {
+    background-color: black;
 }
