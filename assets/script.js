@@ -1,5 +1,6 @@
 var submitForm = document.getElementById("rateForm");
 var currentRatesSection = document.getElementById("currentRates")
+var convertSubmit = document.getElementById("convertForm")
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -20,6 +21,7 @@ function searchApi(currBase, currSymb) {
     var resultList = document.createElement("ul");
     var rate = data.rates[currSymb]
     currentRatesSection.appendChild(resultList);
+    resultList.style.color = "#e4ebee"
     resultList.innerHTML = "1 "+ currBase + " = "+ currSymb + " " +rate;
   })
 }
@@ -32,6 +34,8 @@ function formSubmit(event) {
 
   searchApi(currBase, currSymb);
 }
+
+
 
 
 
