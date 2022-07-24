@@ -1,3 +1,4 @@
+var submitForm = document.getElementById("rateForm");
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
 
@@ -7,8 +8,9 @@ var requestOptions = {
   headers: myHeaders
 };
 
-var submitForm = document.getElementById("rateForm");
-
+function printResults() {
+  
+}
 
 function searchApi(currBase, currSymb) {
 
@@ -26,6 +28,8 @@ function formSubmit(event) {
 
   searchApi(currBase, currSymb);
 }
+
+
 
 submitForm.addEventListener("submit", formSubmit)
 
