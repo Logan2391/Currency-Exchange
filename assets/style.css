@@ -10,7 +10,7 @@ h1 {
 }
 
 .custNav {
-    background-color: rgb(143, 229, 236);
+    background-color: #b1e0ee;
 }
 
 .custbox {
@@ -47,4 +47,8 @@ h1 {
 
 .custRatesContain {
     width: 40vw;
+}
+
+.custBod {
+    background-color: #e4ebee;
 }
