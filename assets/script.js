@@ -22,9 +22,6 @@ function searchApi(currBase, currSymb) {
     currentRatesSection.appendChild(resultList);
     resultList.innerHTML = "1 "+ currBase + " = "+ currSymb + " " +rate;
   })
-  
-
-  
 }
 
 function formSubmit(event) {
