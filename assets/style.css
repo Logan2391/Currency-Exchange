@@ -15,10 +15,14 @@ h1 {
     text-decoration: underline;
     color:white;
 }
-/* 
+
 .custNav {
-    background-color: #2f3136;
-} */
+    background-color: #87a8b3;
+}
+
+.custHtml {
+    background-color: #e4ebee;
+}
 
 .custbox {
     width:20vw;
@@ -49,19 +53,10 @@ h1 {
 }
 
 .custSec {
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 
 .custRatesContain {
     width: 40vw;
 }
 
-/* .notification {
-    color:white;
-    background-color:#5865f2;
-} */
-
-/* 
-.navbar-menu {
-    background-color:#2f3136;
-} */
