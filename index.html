@@ -56,7 +56,10 @@
     </div>
   </nav>
 <!--Current Exhchange Rate Form-->
-<form id="rateForm">
+
+<section class="section is-small">
+  <h2 class="title">Current Exchange Rates :</h2>
+  <form id="rateForm">
   <div class="container is-fluid searchBox">
     <div class="select">
       <select name="currencyBase" id="currencyBase" >
@@ -409,11 +412,8 @@
     </div>
     <input class="input submitBtn" type="submit" value="Submit" id="submitBtn">
   </div>
-</form>
-<section class="section is-small">
-  <h2 class="title">Current Exchange Rates :</h2>
+</form><br>
   <div class="container custRatesContain">
-
     <div id="currentRates" class="notification">
     </div>
   </div>
@@ -424,11 +424,11 @@
   <h3 class="title">Currency Converter</h3>
 </section>
 
-<form id="rateForm">
+<form id="convertForm">
   <div class="container is-fluid searchBox">
-    <input class="input custInput" type="text" placeholder="$ Amount">
+    <input id="convertAmount" class="input custInput" type="text" placeholder="Amount">
     <div class="select">
-      <select name="" id="" >
+      <select name="convertFrom" id="convertFrom" >
         <option value="AED">AED - Emirati Dirham</option>
         <option value="AFN">AFN - Afghan Afghani</option>
         <option value="ALL">ALL - Albanian Lek</option>
@@ -603,7 +603,7 @@
     </div>
     <i class="fas fa-arrow-circle-right custFav"></i>
     <div class="select">
-      <select name="" id="">
+      <select name="convertTo" id="convertTo">
         <option value="AED">AED - Emirati Dirham</option>
         <option value="AFN">AFN - Afghan Afghani</option>
         <option value="ALL">ALL - Albanian Lek</option>
@@ -776,7 +776,7 @@
         <option value="ZWL">ZWL - Zimbabwean Dollar</option>     
       </select>
     </div>
-    <input class="input submitBtn" type="submit" value="Submit" id="">
+    <input class="input submitBtn" type="submit" value="Submit">
   </div>
 </form>
     <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
