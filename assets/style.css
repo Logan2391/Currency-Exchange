@@ -10,7 +10,11 @@ h1 {
 }
 
 .custNav {
-    background-color: rgb(143, 229, 236);
+    background-color: #87a8b3;
+}
+
+.custHtml {
+    background-color: #e4ebee;
 }
 
 .custbox {
@@ -42,9 +46,10 @@ h1 {
 }
 
 .custSec {
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 
 .custRatesContain {
     width: 40vw;
 }
+
