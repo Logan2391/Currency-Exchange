@@ -20,6 +20,7 @@ function searchApi(currBase, currSymb) {
     var resultList = document.createElement("ul");
     var rate = data.rates[currSymb]
     currentRatesSection.appendChild(resultList);
+    resultList.style.color = "#e4ebee"
     resultList.innerHTML = "1 "+ currBase + " = "+ currSymb + " " +rate;
   })
 }
