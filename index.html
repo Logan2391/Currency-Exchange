@@ -12,11 +12,6 @@
     </head>
 
 <body>
-<<<<<<< HEAD
-  <nav class="navbar is-transparent">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-=======
     <nav class="navbar custNav" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <h1 class="navbar-item">Currency Exchange Rates</h1>
@@ -32,46 +27,36 @@
     <div class="navbar-start">
       <a class="navbar-item">
         Home
->>>>>>> 9ea8eb803cc55a1b3355f202e08f15527eaef645
       </a>
-      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <div class="navbar-start">
-        <h1>Currency Exchange</h1>
-        <a class="navbar-item" href="">
-          Home
+
+      <a class="navbar-item">
+        Documentation
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
         </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-item" href="">
-            Docs
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
           </a>
-          <div class="navbar-dropdown is-boxed">
-            <a class="navbar-item" href="">
-              Overview
-            </a>
-            <a class="navbar-item" href="">
-              Modifiers
-            </a>
-            <a class="navbar-item" href="">
-              Columns
-            </a>
-            <a class="navbar-item" href="">
-              Layout
-            </a>
-            <a class="navbar-item" href="">
-              Form
-            </a>
-          </div>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
         </div>
       </div>
     </div>
-  </nav>
+ </div>
+</nav>
 <!--Current Exhchange Rate Form-->
 <form id="rateForm">
   <div class="container is-fluid searchBox">
@@ -424,17 +409,13 @@
         <option value="ZWL">ZWL - Zimbabwean Dollar</option>     
       </select>
     </div>
-    <input class="input submitBtn" type="submit" value="Submit">
+    <input class="input submitBtn" type="submit" value="Submit" id="submitBtn">
   </div>
 </form>
 <section class="section is-small">
   <h2 class="title">Current Exchange Rates :</h2>
   <div class="container custRatesContain">
-<<<<<<< HEAD
-    <div id="currentRates" class="notification">
-=======
     <div id="currentRates" class="notification ratesBox">
->>>>>>> 9ea8eb803cc55a1b3355f202e08f15527eaef645
     </div>
   </div>
 </section>
@@ -444,11 +425,11 @@
   <h3 class="title">Currency Converter</h3>
 </section>
 
-<form id="convertForm">
+<form id="rateForm">
   <div class="container is-fluid searchBox">
-    <input id="amountConvert" class="input custInput" type="text" placeholder="$ Amount">
+    <input class="input custInput" type="text" placeholder="$ Amount">
     <div class="select">
-      <select name="convertFrom" id="convertFrom" >
+      <select name="" id="" >
         <option value="AED">AED - Emirati Dirham</option>
         <option value="AFN">AFN - Afghan Afghani</option>
         <option value="ALL">ALL - Albanian Lek</option>
@@ -623,7 +604,7 @@
     </div>
     <i class="fas fa-arrow-circle-right custFav"></i>
     <div class="select">
-      <select name="convertTo" id="convertTo">
+      <select name="" id="">
         <option value="AED">AED - Emirati Dirham</option>
         <option value="AFN">AFN - Afghan Afghani</option>
         <option value="ALL">ALL - Albanian Lek</option>
@@ -796,9 +777,10 @@
         <option value="ZWL">ZWL - Zimbabwean Dollar</option>     
       </select>
     </div>
-    <input class="input submitBtn" type="submit" value="Submit">
+    <input class="input submitBtn" type="submit" value="Submit" id="">
   </div>
 </form>
+    
     <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
     <script src="./assets/script.js"></script>
 </body>
