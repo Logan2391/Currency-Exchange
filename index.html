@@ -409,7 +409,7 @@
         <option value="ZWL">ZWL - Zimbabwean Dollar</option>     
       </select>
     </div>
-    <input class="input submitBtn" type="submit" value="Submit" id="submitBtn">
+    <input class="input submitBtn" type="submit" value="Submit">
   </div>
 </form>
 <section class="section is-small">
@@ -425,11 +425,11 @@
   <h3 class="title">Currency Converter</h3>
 </section>
 
-<form id="rateForm">
+<form id="convertForm">
   <div class="container is-fluid searchBox">
-    <input class="input custInput" type="text" placeholder="$ Amount">
+    <input id="amountConvert" class="input custInput" type="text" placeholder="$ Amount">
     <div class="select">
-      <select name="" id="" >
+      <select name="convertFrom" id="convertFrom" >
         <option value="AED">AED - Emirati Dirham</option>
         <option value="AFN">AFN - Afghan Afghani</option>
         <option value="ALL">ALL - Albanian Lek</option>
@@ -604,7 +604,7 @@
     </div>
     <i class="fas fa-arrow-circle-right custFav"></i>
     <div class="select">
-      <select name="" id="">
+      <select name="convertTo" id="convertTo">
         <option value="AED">AED - Emirati Dirham</option>
         <option value="AFN">AFN - Afghan Afghani</option>
         <option value="ALL">ALL - Albanian Lek</option>
@@ -777,7 +777,7 @@
         <option value="ZWL">ZWL - Zimbabwean Dollar</option>     
       </select>
     </div>
-    <input class="input submitBtn" type="submit" value="Submit" id="">
+    <input class="input submitBtn" type="submit" value="Submit">
   </div>
 </form>
     

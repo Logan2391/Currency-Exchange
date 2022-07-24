@@ -1,5 +1,6 @@
 var submitForm = document.getElementById("rateForm");
 var currentRatesSection = document.getElementById("currentRates")
+var convertSubmit = document.getElementById("convertForm")
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -33,6 +34,8 @@ function formSubmit(event) {
 
   searchApi(currBase, currSymb);
 }
+
+
 
 
 
