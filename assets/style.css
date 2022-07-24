@@ -7,14 +7,17 @@ h1 {
     font-weight: bold;
     font-size: 25px;
     text-decoration: underline;
+    color:white;
 }
 
 .custNav {
-    background-color: #e4ebee;
+
+    background-color: #5865f2;
+    padding: 15px;
 }
 
 .custHtml {
-    background-color: #e4ebee;
+    background-color: #36393f;
 }
 
 .custbox {
@@ -50,9 +53,26 @@ h1 {
 }
 
 .custRatesContain {
-    width: 40vw;
+    width: 15vw;
 }
 
-.ratesBox {
-    background-color: #5865f2;
+.notification {
+    color:white;
+    background-color:#5865f2;
+}
+
+.title {
+    color:white;
+}
+
+.navbar {
+    background-color: #36393f;
+}
+
+.navbar-item {
+    color:white;
+}
+
+.navbar-dropdown {
+    background-color: #36393f;
 }

@@ -12,51 +12,49 @@
     </head>
 
 <body>
-    <nav class="navbar custNav" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <h1 class="navbar-item">Currency Exchange Rates</h1>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
       </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <h1>Currency Exchange</h1>
+        <a class="navbar-item" href="">
+          Home
         </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="">
+            Docs
           </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="">
+              Overview
+            </a>
+            <a class="navbar-item" href="">
+              Modifiers
+            </a>
+            <a class="navbar-item" href="">
+              Columns
+            </a>
+            <a class="navbar-item" href="">
+              Layout
+            </a>
+            <a class="navbar-item" href="">
+              Form
+            </a>
+          </div>
         </div>
       </div>
     </div>
- </div>
-</nav>
+  </nav>
 <!--Current Exhchange Rate Form-->
 <form id="rateForm">
   <div class="container is-fluid searchBox">
@@ -415,7 +413,8 @@
 <section class="section is-small">
   <h2 class="title">Current Exchange Rates :</h2>
   <div class="container custRatesContain">
-    <div id="currentRates" class="notification ratesBox">
+
+    <div id="currentRates" class="notification">
     </div>
   </div>
 </section>
@@ -780,7 +779,6 @@
     <input class="input submitBtn" type="submit" value="Submit" id="">
   </div>
 </form>
-    
     <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
     <script src="./assets/script.js"></script>
 </body>
