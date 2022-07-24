@@ -3,3 +3,27 @@ h1 {
     font-size: 25px;
     text-decoration: underline;
 }
+
+.custbox {
+    width:20vw;
+}
+
+.searchBox {
+    margin-top: 20px;
+}
+
+.custFav {
+    padding-top: 7px;
+    font-size: 25px;
+}
+
+.submitBtn {
+    background-color: #00d1b2;
+    border-style: none;
+    color: white;
+    width: 3.8vw;
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+}
