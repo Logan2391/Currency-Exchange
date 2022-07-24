@@ -1,4 +1,6 @@
 var submitForm = document.getElementById("rateForm");
+var currentRatesSection = document.getElementById("currentRates")
+
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
 
@@ -8,16 +10,21 @@ var requestOptions = {
   headers: myHeaders
 };
 
-function printResults() {
-  
-}
 
 function searchApi(currBase, currSymb) {
 
   fetch("https://api.apilayer.com/exchangerates_data/latest?symbols="+ currSymb +"&base=" + currBase, requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .then((response) => response.json())
+  .then((data)=> {
+    console.log(data)
+    var resultList = document.createElement("ul");
+    var rate = data.rates[currSymb]
+    currentRatesSection.appendChild(resultList);
+    resultList.innerHTML = "1 "+ currBase + " = "+ currSymb + " " +rate;
+  })
+  
+
+  
 }
 
 function formSubmit(event) {
@@ -32,8 +39,6 @@ function formSubmit(event) {
 
 
 submitForm.addEventListener("submit", formSubmit)
-
-
 
 
 
