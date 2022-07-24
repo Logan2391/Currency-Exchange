@@ -7,11 +7,29 @@ var requestOptions = {
   headers: myHeaders
 };
 
-fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=EUR&base=USD", requestOptions)
+var submitForm = document.getElementById("rateForm");
+
+
+function searchApi(currBase, currSymb) {
+
+  fetch("https://api.apilayer.com/exchangerates_data/latest?symbols="+ currSymb +"&base=" + currBase, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
-  
+}
+
+function formSubmit(event) {
+  event.preventDefault();
+
+  var currBase = document.getElementById("currencyBase").value;
+  var currSymb = document.getElementById("currencySymbols").value; 
+
+  searchApi(currBase, currSymb);
+}
+
+submitForm.addEventListener("submit", formSubmit)
+
+
 
 
 
