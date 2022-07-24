@@ -4,6 +4,10 @@ h1 {
     text-decoration: underline;
 }
 
+.custNav {
+    background-color: rgb(143, 229, 236);
+}
+
 .custbox {
     width:20vw;
 }
@@ -30,4 +34,12 @@ h1 {
 
 .notification {
     width: 450px;
+}
+
+.custInput {
+    width:10vw;
+}
+
+.custSec {
+    padding-bottom: 5px;
 }
