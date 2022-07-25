@@ -45,7 +45,6 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
   fetch("https://api.apilayer.com/exchangerates_data/convert?to="+ convertTo +"&from="+ convertFrom +"&amount="+ convertAmount, requestOptions)
   .then((response)=> response.json())
   .then((data) => {
-    console.log(data)
     var convResult =document.createElement("ul");
     var result = data.result;
     convertedData.appendChild(convResult);
@@ -80,9 +79,7 @@ function clearConvertResult() {
 submitForm.addEventListener("submit", formRateSubmit);
 convertSubmit.addEventListener("submit", formConvertSubmit);
 
-// Clear buttons
+// Clear buttons eventListeners
 
 clearConvert.addEventListener("click", clearConvertResult)
 clearRates.addEventListener("click", clearCurrentRates)
-
-
