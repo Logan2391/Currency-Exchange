@@ -1,6 +1,7 @@
 var submitForm = document.getElementById("rateForm");
-var currentRatesSection = document.getElementById("currentRates")
-var convertSubmit = document.getElementById("convertForm")
+var currentRatesSection = document.getElementById("currentRates");
+var convertSubmit = document.getElementById("convertForm");
+var convertedData = document.getElementById("convertedResult");
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -18,11 +19,11 @@ function searchApi(currBase, currSymb) {
   fetch("https://api.apilayer.com/exchangerates_data/latest?symbols="+ currSymb +"&base=" + currBase, requestOptions)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data)
     var resultList = document.createElement("ul");
     var rate = data.rates[currSymb]
     currentRatesSection.appendChild(resultList);
-    resultList.style.color = "#e4ebee"
+    resultList.style.color = "#e4ebee";
+    resultList.style.fontSize = "18px"
     resultList.innerHTML = "1 "+ currBase + " = "+ currSymb + " " +rate;
   })
 }
@@ -43,6 +44,10 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
   .then((response)=> response.json())
   .then((data) => {
     console.log(data)
+    var convResult =document.createElement("p");
+    var result = data.result;
+    convertedData.appendChild(convResult);
+    convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
   })
 }
 
