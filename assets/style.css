@@ -76,3 +76,17 @@ h1 {
 .navbar-dropdown {
     background-color: #36393f;
 }
+
+.clearBtn {
+    background-color: #5865f2;
+    border-style: none;
+    border-radius: 4px;
+    color: white;
+    width: 74px; 
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.clearBtn:hover {
+    cursor: pointer;
+}
