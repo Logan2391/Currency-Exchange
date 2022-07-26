@@ -51,6 +51,8 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
     convResult.style.color = "#e4ebee";
     convResult.style.fontSize = "18px"
     convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
+  
+    var storedConvert 
   })
 }
 
@@ -84,3 +86,5 @@ convertSubmit.addEventListener("submit", formConvertSubmit);
 
 clearConvert.addEventListener("click", clearConvertResult)
 clearRates.addEventListener("click", clearCurrentRates)
+
+
