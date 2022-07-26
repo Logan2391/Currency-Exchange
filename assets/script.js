@@ -97,6 +97,10 @@ clearRates.addEventListener("click", clearCurrentRates)
 
 //Map API Function
 
+function searchMapApi(latitude, longitude) {
+  console.log(latitude,longitude)
+}
+
 navigator.geolocation
 navigator.geolocation.getCurrentPosition(console.log, console.error);
 
@@ -147,6 +151,7 @@ var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
 
   request.send();  // make the request
 
+searchMapApi(latitude, longitude);
 }
 
 navigator.geolocation.getCurrentPosition(success, console.error);
