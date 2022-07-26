@@ -99,6 +99,12 @@ clearRates.addEventListener("click", clearCurrentRates)
 
 function searchMapApi(latitude, longitude) {
   console.log(latitude,longitude)
+
+  fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=20&origin="+ latitude +","+ longitude +"&radius=10&group+sic_code=609901")
+  .then((response)=> response.json())
+  .then((data) => {
+    console.log(data)
+  });
 }
 
 navigator.geolocation
@@ -131,8 +137,6 @@ var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
     if (request.status === 200){
       // Success!
       var data = JSON.parse(request.responseText);
-      //alert(data.results[0].formatted); // print the location
-
     } else if (request.status <= 500){
       // We reached our target server, but it returned an error
 
