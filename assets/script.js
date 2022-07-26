@@ -64,6 +64,7 @@ function formConvertSubmit(event) {
   searchApiConvert(convertAmount, convertFrom, convertTo);
 }
 
+
 // Clear button functions
 
 function clearCurrentRates() {
