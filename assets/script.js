@@ -83,3 +83,41 @@ convertSubmit.addEventListener("submit", formConvertSubmit);
 
 clearConvert.addEventListener("click", clearConvertResult)
 clearRates.addEventListener("click", clearCurrentRates)
+
+
+
+
+
+//Map API Function
+
+//function searchMapAPI() {
+
+  //fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=4&origin=39.750307,-104.999472")
+  //.then((response) => response.json())
+  //.then((data) => {
+    //console.log(data);
+
+  //})
+
+//}
+
+//searchMapAPI();
+
+
+// using javascript requests the users current location data
+// using data manager api 
+
+
+
+
+
+
+
+navigator.geolocation.getCurrentPosition(console.log, console.log);
+const sucessfulLookup = (position) => {
+  const { latitude, longitude } = position.coords;
+  fetch("https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=c8ca6ab069824bf79076a57e8ef4e905")
+    .then(response = response.json())
+    .then(console.log);
+};
+navigator.geolocation.getCurrentPosition(position, console.log);
