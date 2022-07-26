@@ -45,6 +45,29 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
   fetch("https://api.apilayer.com/exchangerates_data/convert?to="+ convertTo +"&from="+ convertFrom +"&amount="+ convertAmount, requestOptions)
   .then((response)=> response.json())
   .then((data) => {
+    var convResult =document.createElement("ul");
+    var result = data.result;
+    convertedData.appendChild(convResult);
+    convResult.style.color = "#e4ebee";
+    convResult.style.fontSize = "18px"
+    convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
+  })
+}
+
+function formConvertSubmit(event) {
+  event.preventDefault();
+
+  var convertAmount = document.getElementById("convertAmount").value;
+  var convertFrom = document.getElementById("convertFrom").value;
+  var convertTo = document.getElementById("convertTo").value;
+
+  searchApiConvert(convertAmount, convertFrom, convertTo);
+}
+
+function searchApiConvert(convertAmount, convertFrom, convertTo) {
+  fetch("https://api.apilayer.com/exchangerates_data/convert?to="+ convertTo +"&from="+ convertFrom +"&amount="+ convertAmount, requestOptions)
+  .then((response)=> response.json())
+  .then((data) => {
     console.log(data)
     var convResult =document.createElement("ul");
     var result = data.result;
@@ -85,9 +108,16 @@ convertSubmit.addEventListener("submit", formConvertSubmit);
 clearConvert.addEventListener("click", clearConvertResult)
 clearRates.addEventListener("click", clearCurrentRates)
 
+function clearConvertResult() {
+  convertedData.innerHTML = "";
+}
 
- 
+// Form submisson eventListeners
 
+submitForm.addEventListener("submit", formRateSubmit);
+convertSubmit.addEventListener("submit", formConvertSubmit);
 
+// Clear buttons eventListeners
 
-
+clearConvert.addEventListener("click", clearConvertResult)
+clearRates.addEventListener("click", clearCurrentRates)
