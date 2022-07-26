@@ -119,43 +119,64 @@ convertSubmit.addEventListener("submit", formConvertSubmit);
 
 // Clear buttons eventListeners
 
-clearConvert.addEventListener("click", clearConvertResult)
-clearRates.addEventListener("click", clearCurrentRates)
-
-
+clearConvert.addEventListener("click", clearConvertResult);
+clearRates.addEventListener("click", clearCurrentRates);
 
 
 
 //Map API Function
 
-//function searchMapAPI() {
+navigator.geolocation
+navigator.geolocation.getCurrentPosition(console.log, console.error);
 
-  //fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=4&origin=39.750307,-104.999472")
-  //.then((response) => response.json())
-  //.then((data) => {
-    //console.log(data);
+function success(data) {
+var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
+  var latitude = data.coords.latitude;
+  var longitude = data.coords.longitude;
 
-  //})
+  var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
-//}
+  var request_url = api_url
+    + '?'
+    + 'key=' + api_key
+    + '&q=' + encodeURIComponent(latitude + ',' + longitude)
+    + '&pretty=1'
+    + '&no_annotations=1';
 
-//searchMapAPI();
+  // see full list of required and optional parameters:
+  // https://opencagedata.com/api#forward
 
+  var request = new XMLHttpRequest();
+  request.open('GET', request_url, true);
 
-// using javascript requests the users current location data
-// using data manager api 
+  request.onload = function() {
+    // see full list of possible response codes:
+    // https://opencagedata.com/api#codes
 
+    if (request.status === 200){
+      // Success!
+      var data = JSON.parse(request.responseText);
+      alert(data.results[0].formatted); // print the location
 
+    } else if (request.status <= 500){
+      // We reached our target server, but it returned an error
 
+      console.log("unable to geocode! Response code: " + request.status);
+      var data = JSON.parse(request.responseText);
+      console.log('error msg: ' + data.status.message);
+    } else {
+      console.log("server error");
+    }
+  };
 
+  request.onerror = function() {
+    // There was a connection error of some sort
+    console.log("unable to connect to server");
+  };
 
+  request.send();  // make the request
 
+}
 
-navigator.geolocation.getCurrentPosition(console.log, console.log);
-const sucessfulLookup = (position) => {
-  const { latitude, longitude } = position.coords;
-  fetch("https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=c8ca6ab069824bf79076a57e8ef4e905")
-    .then(response = response.json())
-    .then(console.log);
-};
-navigator.geolocation.getCurrentPosition(position, console.log);
+navigator.geolocation.getCurrentPosition(success, console.error);
+
