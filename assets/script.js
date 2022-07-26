@@ -151,4 +151,4 @@ var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
 
 navigator.geolocation.getCurrentPosition(success, console.error);
 
->>>>>>> b973be59166d856b4455bc6935ddd70f024b9630
+
