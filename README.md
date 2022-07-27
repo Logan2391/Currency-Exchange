@@ -13,7 +13,7 @@ Our motivation behind this project is to get an **A** in our coding bootcamp. We
 | TEAM  | Project                                                                                                                                | Author                                                  |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | 1     | [INSERT PROJECTS](EXAMPLE:https://github.com/larymak/Python-project-Scripts/tree/main/ART%20SCRIPTS/image-ascii)                                     | [Cindy Chynoweth](https://github.com/Cinderbeast)                  |
-| 2     | [INSERT PROJECTS]()                                               | [Logan Schoerner]()              |
+| 2     | [INSERT PROJECTS]()                                               | [Logan Schoerner](https://github.com/Logan2391)              |
 | 3     | [INSERT PROJECTS]()                                             | [Thomas Holmes](https://github.com/ThomasHolmes00)                  |
 | 4     | [INSERT PROJECTS]()                                                       | [Kyle Larsen](https://github.com/kylelarsenlarsen)
 1.  https://wallpapercave.com/wp/wp7860706.jpg
