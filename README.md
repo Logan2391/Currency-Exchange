@@ -10,12 +10,12 @@ Our motivation behind this project is to get an **A** in our coding bootcamp. We
 ### Website URL
 [Currency-Exchange](WEBSITE LINK INSERT HERE)
 ## Credits / Reference Material
-|   |                                                                                                                                 | Authors                                                  |
+|       |                                                                                               | Authors                                                  |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | 1     |                                      | [Cindy Chynoweth](https://github.com/Cinderbeast)                  |
 | 2     |                                                | [Logan Schoerner](https://github.com/Logan2391)              |
 | 3     |                                              | [Thomas Holmes](https://github.com/ThomasHolmes00)                  |
-| 4     |                                                        | [Kyle Larsen](https://github.com/kylelarsenlarsen)
+| 4     |                                                        | [Kyle Larsen](https://github.com/kylelarsenlarsen)    |
 1.  https://wallpapercave.com/wp/wp7860706.jpg
 2.  https://bulma.io
 3.  https://fontawesome.com
