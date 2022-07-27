@@ -100,7 +100,7 @@ clearRates.addEventListener("click", clearCurrentRates)
 function searchMapApi(latitude, longitude) {
   console.log(latitude,longitude)
 
-  fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=20&origin="+ latitude +","+ longitude +"&radius=10&group+sic_code=609901")
+  fetch("https://www.mapquestapi.com/search/v4/place?location="+ longitude +"%2C"+ latitude +"&category=sic%3A602101&sort=distance&feedback=false&key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&pageSize=5")
   .then((response)=> response.json())
   .then((data) => {
     console.log(data)
