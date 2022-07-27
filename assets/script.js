@@ -4,6 +4,7 @@ var convertSubmit = document.getElementById("convertForm");
 var convertedData = document.getElementById("convertedResult");
 var clearConvert = document.getElementById("convertClear");
 var clearRates = document.getElementById("rateClear");
+var mapDataSection = document.getElementById("mapSection");
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -105,7 +106,24 @@ function searchMapApi(latitude, longitude) {
   fetch("https://www.mapquestapi.com/search/v4/place?location="+ longitude +"%2C"+ latitude +"&category=sic%3A602101&sort=distance&feedback=false&key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&pageSize=5")
   .then((response)=> response.json())
   .then((data) => {
-    console.log(data)
+    console.log(data);
+
+    var fetchResults = data.results;
+    var busName = data.results;
+    var busAddress = data.results;
+    var pData = document.createElement("p");
+    var locationLink = document.createElement("a");
+    
+    if (fetchResults >= 0) {
+      fetchResults = [];
+    }
+    for (var index = 0; index < fetchResults.length; index++) {
+      var dataCard = document.createElement("div");
+    }
+
+    dataCard.appendChild(pData);
+    dataCard.appendChild(locationLink);
+    pData.innerHTML = 
   });
 }
 
