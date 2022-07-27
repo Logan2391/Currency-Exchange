@@ -1,101 +1,101 @@
-    body {
-        text-align: center;
-        align-content: center;
-    }
-    h1 {
-        font-weight: bold;
-        font-size: 25px;
-        text-decoration: underline;
-        color:white;
-    }
-    
-    h3 {
-        font-weight: bold;
-        font-size: 25px;
-        text-decoration: underline;
-        color:black;
-    }
-    
-    .custNav {
-    
-        background-color: #5865f2;
-        padding: 15px;
-    }
-    
-    .custHtml {
-        background-image: url("https://wallpapercave.com/wp/wp7860706.jpg");
-        height: 100%;
-        background-position: center;
-       background-size: cover;
-    }
-    
-    .custbox {
-        width:20vw;
-    }
-    
-    .searchBox {
-        margin-top: 20px;
-    }
-    
-    .custFav {
-        padding-top: 7px;
-        font-size: 25px;
-    }
-    
-    .submitBtn {
-        background-color: rgb(213, 3, 3); 
-        border-style: none;
-        color: white;
-        width: 74px;
-    }
-    
-    .submitBtn:hover {
-        cursor: pointer;
-    }
-    
-    .custInput {
-        width:10vw;
-    }
-    
-    .custSec {
-        padding-bottom: 0px;
-    }
-    
-    .custRatesContain {
-        width: 15vw;
-    }
-    
-    .notification {
-        color:white; 
-        background-color: rgb(28, 134, 28); 
-    }
-    
-    .title {
-        /* color:white; */
-        color:black;
-    } 
-    
-    .navbar {
-        background-color: #36393f;
-    }    
-    .navbar-item {
-        color:white;
-    }
-    
-    .navbar-dropdown {
-        background-color: #36393f;
-    }
-    
-    .clearBtn { 
-        background-color: blue;
-        border-style: none;
-        border-radius: 4px;
-        color: white;
-        width: 74px; 
-        padding: 10px;
-        font-size: 1rem;
-    }
-    
-    .clearBtn:hover {
-        cursor: pointer;
-    }
+body {
+    text-align: center;
+    align-content: center;
+}
+h1 {
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+    color:white;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+    color:black;
+}
+
+.custNav {
+
+    background-color: #5865f2;
+    padding: 15px;
+}
+
+.custHtml {
+    background-image: url("https://wallpapercave.com/wp/wp7860706.jpg");
+    height: 100%;
+    background-position: center;
+   background-size: cover;
+}
+
+.custbox {
+    width:20vw;
+}
+
+.searchBox {
+    margin-top: 20px;
+}
+
+.custFav {
+    padding-top: 7px;
+    font-size: 25px;
+}
+
+.submitBtn {
+    background-color: rgb(213, 3, 3); 
+    border-style: none;
+    color: white;
+    width: 74px;
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+}
+
+.custInput {
+    width:10vw;
+}
+
+.custSec {
+    padding-bottom: 0px;
+}
+
+.custRatesContain {
+    width: 15vw;
+}
+
+.notification {
+    color:white; 
+    background-color: rgb(28, 134, 28); 
+}
+
+.title {
+    /* color:white; */
+    color:black;
+} 
+
+.navbar {
+    background-color: #36393f;
+}    
+.navbar-item {
+    color:white;
+}
+
+.navbar-dropdown {
+    background-color: #36393f;
+}
+
+.clearBtn { 
+    background-color: blue;
+    border-style: none;
+    border-radius: 4px;
+    color: white;
+    width: 74px; 
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.clearBtn:hover {
+    cursor: pointer;
+}

@@ -137,7 +137,6 @@ var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
     if (request.status === 200){
       // Success!
       var data = JSON.parse(request.responseText);
-
     } else if (request.status <= 500){
       // We reached our target server, but it returned an error
 
@@ -160,5 +159,3 @@ searchMapApi(latitude, longitude);
 }
 
 navigator.geolocation.getCurrentPosition(success, console.error);
-
-
