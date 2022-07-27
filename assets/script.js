@@ -95,12 +95,14 @@ convertSubmit.addEventListener("submit", formConvertSubmit);
 clearConvert.addEventListener("click", clearConvertResult)
 clearRates.addEventListener("click", clearCurrentRates)
 
+
+
 //Map API Function
 
 function searchMapApi(latitude, longitude) {
   console.log(latitude,longitude)
 
-  fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=20&origin="+ latitude +","+ longitude +"&radius=10&group+sic_code=609901")
+  fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=20&origin="+ latitude +","+ longitude +"&radius=10&group_sic_code=?|609901|")
   .then((response)=> response.json())
   .then((data) => {
     console.log(data)
