@@ -125,14 +125,12 @@ var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
     + '&no_annotations=1';
 
   // see full list of required and optional parameters:
-  // https://opencagedata.com/api#forward
 
   var request = new XMLHttpRequest();
   request.open('GET', request_url, true);
 
   request.onload = function() {
     // see full list of possible response codes:
-    // https://opencagedata.com/api#codes
 
     if (request.status === 200){
       // Success!
