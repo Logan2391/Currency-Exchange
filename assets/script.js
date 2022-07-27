@@ -1,7 +1,12 @@
 var convertSubmit = document.getElementById("convertForm");
 var convertedData = document.getElementById("convertedResult");
 var clearConvert = document.getElementById("convertClear");
+<<<<<<< HEAD
 
+=======
+var clearRates = document.getElementById("rateClear");
+var mapDataSection = document.getElementById("mapSection");
+>>>>>>> c94d0bede1e9eaf0ef93bb8b7978e7bdda15154f
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -116,5 +121,3 @@ searchMapApi(latitude, longitude);
 }
 
 navigator.geolocation.getCurrentPosition(success, console.error);
-
-
