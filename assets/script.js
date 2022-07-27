@@ -4,6 +4,7 @@ var convertSubmit = document.getElementById("convertForm");
 var convertedData = document.getElementById("convertedResult");
 var clearConvert = document.getElementById("convertClear");
 var clearRates = document.getElementById("rateClear");
+var mapDataSection = document.getElementById("mapSection");
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -95,15 +96,34 @@ convertSubmit.addEventListener("submit", formConvertSubmit);
 clearConvert.addEventListener("click", clearConvertResult)
 clearRates.addEventListener("click", clearCurrentRates)
 
+
+
 //Map API Function
 
 function searchMapApi(latitude, longitude) {
   console.log(latitude,longitude)
 
-  fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=20&origin="+ latitude +","+ longitude +"&radius=10&group+sic_code=609901")
+  fetch("https://www.mapquestapi.com/search/v4/place?location="+ longitude +"%2C"+ latitude +"&category=sic%3A602101&sort=distance&feedback=false&key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&pageSize=5")
   .then((response)=> response.json())
   .then((data) => {
-    console.log(data)
+    console.log(data);
+
+    var fetchResults = data.results;
+    var busName = data.results;
+    var busAddress = data.results;
+    var pData = document.createElement("p");
+    var locationLink = document.createElement("a");
+    
+    if (fetchResults >= 0) {
+      fetchResults = [];
+    }
+    for (var index = 0; index < fetchResults.length; index++) {
+      var dataCard = document.createElement("div");
+    }
+
+    dataCard.appendChild(pData);
+    dataCard.appendChild(locationLink);
+    pData.innerHTML = 
   });
 }
 
@@ -125,14 +145,12 @@ var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
     + '&no_annotations=1';
 
   // see full list of required and optional parameters:
-  // https://opencagedata.com/api#forward
 
   var request = new XMLHttpRequest();
   request.open('GET', request_url, true);
 
   request.onload = function() {
     // see full list of possible response codes:
-    // https://opencagedata.com/api#codes
 
     if (request.status === 200){
       // Success!
