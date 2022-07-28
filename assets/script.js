@@ -51,7 +51,17 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
     convResult.style.color = "#e4ebee";
     convResult.style.fontSize = "18px"
     convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
-  })
+  
+    var storedConvert = localStorage.getItem(convResult.innerHTML);
+    if (storedConvert) {
+      storedConvert = JSON.parse(convResult.innerHTML);
+    } else {
+      storedConvert =[];
+    }
+    
+    localStorage.setItem('store', JSON.stringify(convResult.innerHTML));
+  });
+    
 }
 
 function formConvertSubmit(event) {
@@ -64,29 +74,6 @@ function formConvertSubmit(event) {
   searchApiConvert(convertAmount, convertFrom, convertTo);
 }
 
-function searchApiConvert(convertAmount, convertFrom, convertTo) {
-  fetch("https://api.apilayer.com/exchangerates_data/convert?to="+ convertTo +"&from="+ convertFrom +"&amount="+ convertAmount, requestOptions)
-  .then((response)=> response.json())
-  .then((data) => {
-    console.log(data)
-    var convResult =document.createElement("ul");
-    var result = data.result;
-    convertedData.appendChild(convResult);
-    convResult.style.color = "#e4ebee";
-    convResult.style.fontSize = "18px"
-    convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
-  })
-}
-
-function formConvertSubmit(event) {
-  event.preventDefault();
-
-  var convertAmount = document.getElementById("convertAmount").value;
-  var convertFrom = document.getElementById("convertFrom").value;
-  var convertTo = document.getElementById("convertTo").value;
-
-  searchApiConvert(convertAmount, convertFrom, convertTo);
-}
 
 // Clear button functions
 
@@ -108,16 +95,65 @@ convertSubmit.addEventListener("submit", formConvertSubmit);
 clearConvert.addEventListener("click", clearConvertResult)
 clearRates.addEventListener("click", clearCurrentRates)
 
-function clearConvertResult() {
-  convertedData.innerHTML = "";
+//Map API Function
+
+function searchMapApi(latitude, longitude) {
+  console.log(latitude,longitude)
+
+  fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=20&origin="+ latitude +","+ longitude +"&radius=10&group+sic_code=609901")
+  .then((response)=> response.json())
+  .then((data) => {
+    console.log(data)
+  });
 }
 
-// Form submisson eventListeners
+navigator.geolocation
+navigator.geolocation.getCurrentPosition(console.log, console.error);
 
-submitForm.addEventListener("submit", formRateSubmit);
-convertSubmit.addEventListener("submit", formConvertSubmit);
+function success(data) {
+var api_key = 'c8ca6ab069824bf79076a57e8ef4e905';
+  var latitude = data.coords.latitude;
+  var longitude = data.coords.longitude;
 
-// Clear buttons eventListeners
+  var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
-clearConvert.addEventListener("click", clearConvertResult)
-clearRates.addEventListener("click", clearCurrentRates)
+  var request_url = api_url
+    + '?'
+    + 'key=' + api_key
+    + '&q=' + encodeURIComponent(latitude + ',' + longitude)
+    + '&pretty=1'
+    + '&no_annotations=1';
+
+  // see full list of required and optional parameters:
+
+  var request = new XMLHttpRequest();
+  request.open('GET', request_url, true);
+
+  request.onload = function() {
+    // see full list of possible response codes:
+
+    if (request.status === 200){
+      // Success!
+      var data = JSON.parse(request.responseText);
+    } else if (request.status <= 500){
+      // We reached our target server, but it returned an error
+
+      console.log("unable to geocode! Response code: " + request.status);
+      var data = JSON.parse(request.responseText);
+      console.log('error msg: ' + data.status.message);
+    } else {
+      console.log("server error");
+    }
+  };
+
+  request.onerror = function() {
+    // There was a connection error of some sort
+    console.log("unable to connect to server");
+  };
+
+  request.send();  // make the request
+
+searchMapApi(latitude, longitude);
+}
+
+navigator.geolocation.getCurrentPosition(success, console.error);
