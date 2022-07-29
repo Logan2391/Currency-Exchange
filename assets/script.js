@@ -1,9 +1,21 @@
-var submitForm = document.getElementById("rateForm");
-var currentRatesSection = document.getElementById("currentRates");
 var convertSubmit = document.getElementById("convertForm");
 var convertedData = document.getElementById("convertedResult");
 var clearConvert = document.getElementById("convertClear");
-var clearRates = document.getElementById("rateClear");
+var allconversionResults = [];
+
+var dataName1 = document.getElementById("dataName1");
+var dataName2 = document.getElementById("dataName2");
+var dataName3 = document.getElementById("dataName3");
+var dataName4 = document.getElementById("dataName4");
+var dataName5 = document.getElementById("dataName5");
+var dataName6 = document.getElementById("dataName6");
+
+var dataAddress1 = document.getElementById("dataAddress1");
+var dataAddress2 = document.getElementById("dataAddress2");
+var dataAddress3 = document.getElementById("dataAddress3");
+var dataAddress4 = document.getElementById("dataAddress4");
+var dataAddress5 = document.getElementById("dataAddress5");
+var dataAddress6 = document.getElementById("dataAddress6");
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -13,31 +25,6 @@ var requestOptions = {
   redirect: 'follow',
   headers: myHeaders
 };
-
-// Handles all current rate checks
-
-function searchApi(currBase, currSymb) {
-
-  fetch("https://api.apilayer.com/exchangerates_data/latest?symbols="+ currSymb +"&base=" + currBase, requestOptions)
-  .then((response) => response.json())
-  .then((data) => {
-    var resultList = document.createElement("ul");
-    var rate = data.rates[currSymb]
-    currentRatesSection.appendChild(resultList);
-    resultList.style.color = "#e4ebee";
-    resultList.style.fontSize = "18px"
-    resultList.innerHTML = "1 "+ currBase + " = "+ currSymb + " " +rate;
-  })
-}
-
-function formRateSubmit(event) {
-  event.preventDefault();
-
-  var currBase = document.getElementById("currencyBase").value;
-  var currSymb = document.getElementById("currencySymbols").value; 
-
-  searchApi(currBase, currSymb);
-}
 
 // Handles all convert operations 
 
@@ -49,20 +36,17 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
     var result = data.result;
     convertedData.appendChild(convResult);
     convResult.style.color = "#e4ebee";
-    convResult.style.fontSize = "18px"
+    convResult.style.fontSize = "18px";
     convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
-  
-    var storedConvert = localStorage.getItem(convResult.innerHTML);
-    if (storedConvert) {
-      storedConvert = JSON.parse(convResult.innerHTML);
-    } else {
-      storedConvert =[];
-    }
+
+
+    allconversionResults.push(convResult.innerHTML);
+    localStorage.setItem("key", JSON.stringify(allconversionResults));
     
-    localStorage.setItem('store', JSON.stringify(convResult.innerHTML));
   });
-    
 }
+
+// pull selected values for the search API function to use as parameters
 
 function formConvertSubmit(event) {
   event.preventDefault();
@@ -74,36 +58,72 @@ function formConvertSubmit(event) {
   searchApiConvert(convertAmount, convertFrom, convertTo);
 }
 
+// LocalStorage functions
 
-// Clear button functions
+function getLocal() {
+  var getLocalResults = localStorage.getItem("key");
+  var presentResults = JSON.parse(getLocalResults);
 
-function clearCurrentRates() {
-  currentRatesSection.innerHTML = "";
+  for (var i = 0; i < presentResults.length; i++) {
+    var convResult =document.createElement("ul");
+    convResult.innerHTML = presentResults[i];
+    convResult.style.color = "#e4ebee";
+    convResult.style.fontSize = "18px"
+    convertedData.appendChild(convResult);
+  }
 }
+
+
+// Clear button function
 
 function clearConvertResult() {
   convertedData.innerHTML = "";
+  localStorage.clear();
 }
 
-// Form submisson eventListeners
+// Form submisson eventListener
 
-submitForm.addEventListener("submit", formRateSubmit);
 convertSubmit.addEventListener("submit", formConvertSubmit);
 
-// Clear buttons
+// Clear button click event
 
 clearConvert.addEventListener("click", clearConvertResult)
-clearRates.addEventListener("click", clearCurrentRates)
 
-//Map API Function
+//Map API Functions
 
 function searchMapApi(latitude, longitude) {
-  console.log(latitude,longitude)
 
-  fetch("http://www.mapquestapi.com/search/v2/radius?key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&maxMatches=20&origin="+ latitude +","+ longitude +"&radius=10&group+sic_code=609901")
+  fetch("https://www.mapquestapi.com/search/v4/place?location="+ longitude +"%2C"+ latitude +"&category=sic%3A602101&sort=distance&feedback=false&key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&pageSize=6")
   .then((response)=> response.json())
   .then((data) => {
-    console.log(data)
+    
+    var resultName1 = data.results[0].name;
+    var resultName2 = data.results[1].name;
+    var resultName3 = data.results[2].name;
+    var resultName4 = data.results[3].name;
+    var resultName5 = data.results[4].name;
+    var resultName6 = data.results[5].name;
+
+    var resultAddress1 = data.results[0].displayString;
+    var resultAddress2 = data.results[1].displayString;
+    var resultAddress3 = data.results[2].displayString;
+    var resultAddress4 = data.results[3].displayString;
+    var resultAddress5 = data.results[4].displayString;
+    var resultAddress6 = data.results[5].displayString;
+
+    dataName1.innerHTML = resultName1;
+    dataName2.innerHTML = resultName2;
+    dataName3.innerHTML = resultName3;
+    dataName4.innerHTML = resultName4;
+    dataName5.innerHTML = resultName5;
+    dataName6.innerHTML = resultName6;
+    
+    dataAddress1.innerHTML = resultAddress1;
+    dataAddress2.innerHTML = resultAddress2;
+    dataAddress3.innerHTML = resultAddress3;
+    dataAddress4.innerHTML = resultAddress4;
+    dataAddress5.innerHTML = resultAddress5;
+    dataAddress6.innerHTML = resultAddress6;
   });
 }
 
@@ -158,4 +178,5 @@ searchMapApi(latitude, longitude);
 
 navigator.geolocation.getCurrentPosition(success, console.error);
 
-
+// Calls LocalStorage Function 
+getLocal();
