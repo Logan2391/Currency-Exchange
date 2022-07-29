@@ -1,12 +1,10 @@
 # Currency-Exchange
 
-## Description
-Our motivation behind this project is to get an **A** in our coding bootcamp. We built this project to address the financial needs of users seeking to exchange their currency to any other desired currency and point them to their nearest exchange center. Over the course of this project we learned how to collaborate, make better use GitHub, and Git Bash. Currency-Exchange is distinguished by it's scalability.
 ## Usage
 *   Converts selected currency to desired currency in the preferred amount.
 *   Displays locations nearby to exchange currency.
 ### Demo-Image
-![project](./assets/images/screenshotofcurrencyexchange.PNG)
+![project](INSERT DEMONSTRATION IMAGE HERE)
 ### Website URL
 [Currency-Exchange](WEBSITE LINK INSERT HERE)
 ## Credits / Reference Material
