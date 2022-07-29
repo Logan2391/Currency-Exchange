@@ -20,4 +20,3 @@
 4.  https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
 5.  https://developer.mapquest.com/documentation/search-api/v2/radius-search/get/
 6.  https://apilayer.com/marketplace/exchangerates_data-api
-7.  https://choosealicense.com
