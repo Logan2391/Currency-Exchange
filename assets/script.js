@@ -117,14 +117,12 @@ function searchMapApi(latitude, longitude) {
     dataName4.innerHTML = resultName4;
     dataName5.innerHTML = resultName5;
     dataName6.innerHTML = resultName6;
-
     dataAddress1.innerHTML = resultAddress1;
     dataAddress2.innerHTML = resultAddress2;
     dataAddress3.innerHTML = resultAddress3;
     dataAddress4.innerHTML = resultAddress4;
     dataAddress5.innerHTML = resultAddress5;
     dataAddress6.innerHTML = resultAddress6;
-
   });
 }
 
