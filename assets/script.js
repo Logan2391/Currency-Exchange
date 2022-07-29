@@ -38,6 +38,9 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
     convResult.style.color = "#e4ebee";
     convResult.style.fontSize = "18px"
     convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
+
+    allconversionResults.push(convResult.innerHTML);
+    localStorage.setItem("key", JSON.stringify(allconversionResults));
   });
     
 }
@@ -50,6 +53,19 @@ function formConvertSubmit(event) {
   var convertTo = document.getElementById("convertTo").value;
 
   searchApiConvert(convertAmount, convertFrom, convertTo);
+}
+
+// LocalStorage functions
+function getLocal() {
+  var getLocalResults = localStorage.getItem("key");
+  var presentResults = JSON.parse(getLocalResults);
+  for (var i = 0; i < presentResults.length; i++) {
+    var convResult =document.createElement("ul");
+    convResult.innerHTML = presentResults[i];
+    convResult.style.color = "#E4EBEE";
+    convResult.style.fontSize = "18px"
+    convertedData.appendChild(convResult);
+  }
 }
 
 
