@@ -3,6 +3,13 @@
         text-align: center;
         align-content: center;
     }
+
+    h1 {
+        font-weight: bold;
+        font-size: 25px;
+        text-decoration: underline;
+        color:white;
+    }    
     /* sizing and font for Current Exchange Rate Conveter title */
     h2 {
         font-weight: bold;
@@ -13,12 +20,20 @@
     /* sizing and font for Currency Converter title */
     h3 {
         font-weight: bold;
-        font-size: 25px;
+        font-size: 35px;
         text-decoration: underline;
         color:black;
     }
     
+
+    .custNav {
+        background-color: #5865f2;
+        padding: 15px;
+    }
+    
+
     /* background image and sizing */
+
     .custHtml {
         background-image: url("https://wallpapercave.com/wp/wp7860706.jpg");
         height: 100%;
@@ -38,7 +53,7 @@
     .custFav {
         padding-top: 7px;
         font-size: 25px;
-        color: rgb(247, 120, 52);
+        color: rgb(249, 5, 5);
     }
     
     /* sizing and coloring for the submit buttons */
@@ -56,7 +71,7 @@
     /* sizing and coloring of the Local Exchange Locations boxes      */
    
     .custTitle {
-        background-color: rgb(247, 247, 41);
+        background-color: white;
         margin-left: 35%;
         margin-right: 35%;
         border-radius: 5px;
@@ -85,7 +100,7 @@
     
     .notification {
         color:white; 
-        background-color: rgb(51, 188, 51); 
+        background-color: white; 
     }
     
     /* coloring for the title */
@@ -121,4 +136,22 @@
     /* clear button cursor */
     .clearBtn:hover {
         cursor: pointer;
+<<<<<<< HEAD
     }
+=======
+    }
+
+    .custTitle {
+        background-color: white;
+        margin-left: 35%;
+        margin-right: 35%;
+        border-radius: 5px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 35px;
+        text-decoration: underline;
+        color:black;
+    }
+
+   
+>>>>>>> 3c6ac20e097ec9a72f9633124ab2169a64c28303
