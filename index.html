@@ -12,6 +12,9 @@
     </head>
 
 <body>
+
+  <!-- navbar -->
+
   <nav class="navbar is-transparent">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://bulma.io">
@@ -54,9 +57,11 @@
       </div>
     </div>
   </nav>
+
 <!--Currency Conversion Form-->
-<section class="section custSec is-small">
-  <h3 class="title">Currency Converter</h3>
+
+<section class="section is-small">
+  <h3 class="title custTitle">Currency Converter</h3>
     <form id="convertForm">
       <div class="container is-fluid searchBox">
         <input id="convertAmount" class="input custInput" type="text" placeholder="Amount">
@@ -406,6 +411,80 @@
       <button id="convertClear" class="clearBtn">Clear</button>
     </div>
 </section>
+
+  <!-- data card section -->
+
+<section class="section custSec">
+  <h4 class="title custTitle">Local Exchange Locations</h4>
+  
+
+  <!-- first Row of data cards -->
+
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p id="dataName1" class="title"></p>
+        <p id="dataAddress1" class="subtitle"></p>
+        <div class="content">
+          <p></p>
+        </div>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p id="dataName2" class="title"></p>
+        <p id="dataAddress2" class="subtitle"></p>
+        <div class="content">
+          <p></p>
+        </div>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p id="dataName3" class="title"></p>
+        <p id="dataAddress3" class="subtitle"></p>
+        <div class="content">
+          <p></p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- second row of data cards -->
+
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p id="dataName4" class="title"></p>
+        <p id="dataAddress4" class="subtitle"></p>
+        <div class="content">
+          <p></p>
+        </div>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p id="dataName5" class="title"></p>
+        <p id="dataAddress5" class="subtitle"></p>
+        <div class="content">
+          <p></p>
+        </div>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p id="dataName6" class="title"></p>
+        <p id="dataAddress6" class="subtitle"></p>
+        <div class="content">
+          <p></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
     <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
     <script src="./assets/script.js"></script>
 </body>

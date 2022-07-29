@@ -2,6 +2,7 @@
         text-align: center;
         align-content: center;
     }
+
     h1 {
         font-weight: bold;
         font-size: 25px;
@@ -11,13 +12,12 @@
     
     h3 {
         font-weight: bold;
-        font-size: 25px;
+        font-size: 35px;
         text-decoration: underline;
         color:black;
     }
     
     .custNav {
-    
         background-color: #5865f2;
         padding: 15px;
     }
@@ -57,9 +57,6 @@
         width:10vw;
     }
     
-    .custSec {
-        padding-bottom: 0px;
-    }
     
     .custRatesContain {
         width: 15vw;
@@ -99,3 +96,17 @@
     .clearBtn:hover {
         cursor: pointer;
     }
+
+    .custTitle {
+        background-color: white;
+        margin-left: 35%;
+        margin-right: 35%;
+        border-radius: 5px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 35px;
+        text-decoration: underline;
+        color:black;
+    }
+
+   

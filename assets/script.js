@@ -1,6 +1,21 @@
 var convertSubmit = document.getElementById("convertForm");
 var convertedData = document.getElementById("convertedResult");
 var clearConvert = document.getElementById("convertClear");
+var allconversionResults = [];
+
+var dataName1 = document.getElementById("dataName1");
+var dataName2 = document.getElementById("dataName2");
+var dataName3 = document.getElementById("dataName3");
+var dataName4 = document.getElementById("dataName4");
+var dataName5 = document.getElementById("dataName5");
+var dataName6 = document.getElementById("dataName6");
+
+var dataAddress1 = document.getElementById("dataAddress1");
+var dataAddress2 = document.getElementById("dataAddress2");
+var dataAddress3 = document.getElementById("dataAddress3");
+var dataAddress4 = document.getElementById("dataAddress4");
+var dataAddress5 = document.getElementById("dataAddress5");
+var dataAddress6 = document.getElementById("dataAddress6");
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -21,11 +36,17 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
     var result = data.result;
     convertedData.appendChild(convResult);
     convResult.style.color = "#e4ebee";
-    convResult.style.fontSize = "18px"
+    convResult.style.fontSize = "18px";
     convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
-  });
+
+
+    allconversionResults.push(convResult.innerHTML);
+    localStorage.setItem("key", JSON.stringify(allconversionResults));
     
+  });
 }
+
+// pull selected values for the search API function to use as parameters
 
 function formConvertSubmit(event) {
   event.preventDefault();
@@ -37,31 +58,73 @@ function formConvertSubmit(event) {
   searchApiConvert(convertAmount, convertFrom, convertTo);
 }
 
+// LocalStorage functions
+
+function getLocal() {
+  var getLocalResults = localStorage.getItem("key");
+  var presentResults = JSON.parse(getLocalResults);
+
+  for (var i = 0; i < presentResults.length; i++) {
+    var convResult =document.createElement("ul");
+    convResult.innerHTML = presentResults[i];
+    convResult.style.color = "#e4ebee";
+    convResult.style.fontSize = "18px"
+    convertedData.appendChild(convResult);
+  }
+}
+
 
 // Clear button function
 
 function clearConvertResult() {
   convertedData.innerHTML = "";
+  localStorage.clear();
 }
 
 // Form submisson eventListener
 
 convertSubmit.addEventListener("submit", formConvertSubmit);
 
-// Clear buttons
+// Clear button click event
 
 clearConvert.addEventListener("click", clearConvertResult)
 
 //Map API Functions
 
 function searchMapApi(latitude, longitude) {
-  console.log(latitude,longitude)
 
-  fetch("https://www.mapquestapi.com/search/v4/place?location="+ longitude +"%2C"+ latitude +"&category=sic%3A602101&sort=distance&feedback=false&key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&pageSize=5")
+  fetch("https://www.mapquestapi.com/search/v4/place?location="+ longitude +"%2C"+ latitude +"&category=sic%3A602101&sort=distance&feedback=false&key=zv2C2Yfo2khXbeaMsTionsrkGqV6Els8&pageSize=6")
   .then((response)=> response.json())
   .then((data) => {
-    console.log(data)
-    console.log(data.results[0].name)
+    
+    var resultName1 = data.results[0].name;
+    var resultName2 = data.results[1].name;
+    var resultName3 = data.results[2].name;
+    var resultName4 = data.results[3].name;
+    var resultName5 = data.results[4].name;
+    var resultName6 = data.results[5].name;
+
+    var resultAddress1 = data.results[0].displayString;
+    var resultAddress2 = data.results[1].displayString;
+    var resultAddress3 = data.results[2].displayString;
+    var resultAddress4 = data.results[3].displayString;
+    var resultAddress5 = data.results[4].displayString;
+    var resultAddress6 = data.results[5].displayString;
+
+    dataName1.innerHTML = resultName1;
+    dataName2.innerHTML = resultName2;
+    dataName3.innerHTML = resultName3;
+    dataName4.innerHTML = resultName4;
+    dataName5.innerHTML = resultName5;
+    dataName6.innerHTML = resultName6;
+
+    dataAddress1.innerHTML = resultAddress1;
+    dataAddress2.innerHTML = resultAddress2;
+    dataAddress3.innerHTML = resultAddress3;
+    dataAddress4.innerHTML = resultAddress4;
+    dataAddress5.innerHTML = resultAddress5;
+    dataAddress6.innerHTML = resultAddress6;
+
   });
 }
 
@@ -115,3 +178,6 @@ searchMapApi(latitude, longitude);
 }
 
 navigator.geolocation.getCurrentPosition(success, console.error);
+
+// Calls LocalStorage Function 
+getLocal();
