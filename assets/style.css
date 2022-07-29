@@ -1,3 +1,10 @@
+    :root {
+        --box-colors: #394551;
+        --btn-colors: #e14129;
+        --text-color: white;
+        --address-color: lightgray;
+    }
+    
     /* center aligns the text in the body of the page */
     body {
         text-align: center;
@@ -10,13 +17,7 @@
         text-decoration: underline;
         color:white;
     }    
-    /* sizing and font for Current Exchange Rate Conveter title */
-    h2 {
-        font-weight: bold;
-        font-size: 25px;
-        text-decoration: underline;
-        color:white;
-    }
+    
     /* sizing and font for Currency Converter title */
     h3 {
         font-weight: bold;
@@ -25,13 +26,6 @@
         color:black;
     }
     
-
-    .custNav {
-        background-color: #5865f2;
-        padding: 15px;
-    }
-    
-
     /* background image and sizing */
 
     .custHtml {
@@ -53,14 +47,14 @@
     .custFav {
         padding-top: 7px;
         font-size: 25px;
-        color: rgb(249, 5, 5);
+        color: grey;
     }
     
     /* sizing and coloring for the submit buttons */
     .submitBtn {
-        background-color: rgb(249, 5, 5); 
+        background-color: var(--btn-colors); 
         border-style: none;
-        color: white;
+        color: var(--text-color);
         width: 74px;
     }
     /* cursor for submit button */
@@ -99,7 +93,7 @@
     }
     
     .notification {
-        color:white; 
+        color:var(--text-color); 
         background-color: white; 
     }
     
@@ -110,24 +104,19 @@
 
     /* coloring for the main navigation bar */
     .navbar {
-        background-color: #36393f;
+        background-color: var(--box-colors);
+        padding-top: 10px;
+        padding-bottom: 10px;
     }    
 
-    /* navigation bar text coloring */
-    .navbar-item {
-        color:white;
-    }
     
-    /* .navbar-dropdown {
-        background-color: #36393f;
-    } */
     
     /* clear buttons sizing and coloring */
     .clearBtn { 
-        background-color: blue;
+        background-color: var(--btn-colors);
         border-style: none;
         border-radius: 4px;
-        color: white;
+        color: var(--text-color);
         width: 74px; 
         padding: 10px;
         font-size: 1rem;
@@ -139,7 +128,6 @@
     }
 
     .custTitle {
-        background-color: white;
         margin-left: 35%;
         margin-right: 35%;
         border-radius: 5px;
@@ -147,7 +135,18 @@
         font-weight: bold;
         font-size: 35px;
         text-decoration: underline;
-        color:black;
+        color:var(--text-color);
     }
 
+   .boxColor {
+    background-color: var(--box-colors);
+   }
+
+   .textColor {
+    color:  var(--text-color);
+   }
+
+   .addressColor {
+    color:  var(--address-color);
+   }
    
