@@ -10,12 +10,12 @@ Our motivation behind this project is to get an **A** in our coding bootcamp. We
 ### Website URL
 [Currency-Exchange](WEBSITE LINK INSERT HERE)
 ## Credits / Reference Material
-| TEAM  | Project                                                                                                                                | Author                                                  |
+|       |                                                                                               | Authors                                                  |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| 1     | [INSERT PROJECTS](EXAMPLE:https://github.com/larymak/Python-project-Scripts/tree/main/ART%20SCRIPTS/image-ascii)                                     | [Cindy Chynoweth](https://github.com/Cinderbeast)                  |
-| 2     | [INSERT PROJECTS]()                                               | [Logan Schoerner](https://github.com/Logan2391)              |
-| 3     | [INSERT PROJECTS]()                                             | [Thomas Holmes](https://github.com/ThomasHolmes00)                  |
-| 4     | [INSERT PROJECTS]()                                                       | [Kyle Larsen](https://github.com/kylelarsenlarsen)
+| 1     |                                      | [Cindy Chynoweth](https://github.com/Cinderbeast)                  |
+| 2     |                                                | [Logan Schoerner](https://github.com/Logan2391)              |
+| 3     |                                              | [Thomas Holmes](https://github.com/ThomasHolmes00)                  |
+| 4     |                                                        | [Kyle Larsen](https://github.com/kylelarsenlarsen)    |
 1.  https://wallpapercave.com/wp/wp7860706.jpg
 2.  https://bulma.io
 3.  https://fontawesome.com
