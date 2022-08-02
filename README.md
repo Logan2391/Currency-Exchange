@@ -4,7 +4,7 @@
 *   Converts selected currency to desired currency in the preferred amount.
 *   Displays locations nearby to exchange currency.
 ### Demo-Image
-![project](.assets/images/screenshot_updated.png)
+![project](./assets/images/screenshot%20updated.png)
 ### Website URL
 [Currency-Exchange](https://logan2391.github.io/Currency-Exchange/)
 ## Credits / Reference Material
