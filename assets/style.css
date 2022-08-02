@@ -150,3 +150,12 @@
     color:  var(--address-color);
    }
    
+   .error {
+    font-size: 18px;
+    background-color:rgba(255, 255, 255, 0.5);
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 5px;
+    color:rgb(199, 3, 3);
+    padding: 10px;
+   }
