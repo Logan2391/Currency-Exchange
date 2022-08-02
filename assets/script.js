@@ -1,6 +1,7 @@
 var convertSubmit = document.getElementById("convertForm");
 var convertedData = document.getElementById("convertedResult");
 var clearConvert = document.getElementById("convertClear");
+var amountError = document.getElementById('error');
 var allconversionResults = [];
 
 var dataName1 = document.getElementById("dataName1");
@@ -32,17 +33,23 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
   fetch("https://api.apilayer.com/exchangerates_data/convert?to="+ convertTo +"&from="+ convertFrom +"&amount="+ convertAmount, requestOptions)
   .then((response)=> response.json())
   .then((data) => {
-    var convResult =document.createElement("ul");
-    var result = data.result;
-    convertedData.appendChild(convResult);
-    convResult.style.color = "#e4ebee";
-    convResult.style.fontSize = "18px";
-    convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
-
-
-    allconversionResults.push(convResult.innerHTML);
-    localStorage.setItem("key", JSON.stringify(allconversionResults));
-    
+    if (convertAmount === "") {
+      amountError.classList.add('error');
+      amountError.innerHTML = "Please enter a valid amount.";
+    } else {
+      var convResult =document.createElement("ul");
+      var result = data.result;
+      amountError.innerHTML = "";
+      amountError.classList.remove('error');
+      convertedData.appendChild(convResult);
+      convResult.style.color = "#e4ebee";
+      convResult.style.fontSize = "18px";
+      convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
+      
+  
+      allconversionResults.push(convResult.innerHTML);
+      localStorage.setItem("key", JSON.stringify(allconversionResults));
+    }
   });
 }
 
