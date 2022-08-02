@@ -1,6 +1,7 @@
 var convertSubmit = document.getElementById("convertForm");
 var convertedData = document.getElementById("convertedResult");
 var clearConvert = document.getElementById("convertClear");
+var amountError = document.getElementById("error")
 var allconversionResults = [];
 
 var dataName1 = document.getElementById("dataName1");
@@ -16,6 +17,7 @@ var dataAddress3 = document.getElementById("dataAddress3");
 var dataAddress4 = document.getElementById("dataAddress4");
 var dataAddress5 = document.getElementById("dataAddress5");
 var dataAddress6 = document.getElementById("dataAddress6");
+
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
@@ -39,6 +41,9 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
     convResult.style.fontSize = "18px";
     convResult.innerHTML = convertAmount + " " + convertFrom + " = " + convertTo + " " + result;
 
+    if (convertAmount === "") {
+
+    }
 
     allconversionResults.push(convResult.innerHTML);
     localStorage.setItem("key", JSON.stringify(allconversionResults));
