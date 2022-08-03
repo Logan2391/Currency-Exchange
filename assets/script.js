@@ -18,6 +18,7 @@ var dataAddress4 = document.getElementById("dataAddress4");
 var dataAddress5 = document.getElementById("dataAddress5");
 var dataAddress6 = document.getElementById("dataAddress6");
 
+
 var myHeaders = new Headers();
 myHeaders.append("apikey", "0SLoI4nb45Yf4jdHudgiFS0IMLWXY3Uq");
 
@@ -38,7 +39,7 @@ function searchApiConvert(convertAmount, convertFrom, convertTo) {
       amountError.innerHTML = "Please enter a valid amount.";
     } else {
       var convResult =document.createElement("ul");
-      var result = data.result.toFixed(2);
+      var result = data.result.toFixed(3);
       amountError.innerHTML = "";
       amountError.classList.remove('error');
       convertedData.appendChild(convResult);
